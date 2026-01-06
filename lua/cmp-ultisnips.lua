@@ -70,8 +70,8 @@ end
 ---@param completion_item lsp.CompletionItem
 ---@param callback fun(completion_item: lsp.CompletionItem|nil)
 function source:execute(completion_item, callback)
-	if vim.call("UltiSnips#CanExpandSnippet") == 1 then
-		vim.call("UltiSnips#ExpandSnippet")
+	if vim.fn["UltiSnips#ExpandSnippet"]() == 1 then
+		vim.fn["UltiSnips#ExpandSnippet"]()
 	end
 
 	callback(completion_item)
